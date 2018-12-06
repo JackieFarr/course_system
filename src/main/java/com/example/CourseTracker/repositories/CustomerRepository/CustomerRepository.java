@@ -1,4 +1,4 @@
-package com.example.CourseTracker.repositories;
+package com.example.CourseTracker.repositories.CustomerRepository;
 
 import com.example.CourseTracker.models.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -3,14 +3,16 @@ package com.example.CourseTracker;
 import com.example.CourseTracker.models.Booking;
 import com.example.CourseTracker.models.Course;
 import com.example.CourseTracker.models.Customer;
-import com.example.CourseTracker.repositories.BookingRepository;
-import com.example.CourseTracker.repositories.CourseRepository;
-import com.example.CourseTracker.repositories.CustomerRepository;
+import com.example.CourseTracker.repositories.BookingRepository.BookingRepository;
+import com.example.CourseTracker.repositories.CourseRepository.CourseRepository;
+import com.example.CourseTracker.repositories.CustomerRepository.CustomerRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -57,6 +59,11 @@ public class CourseTrackerApplicationTests {
 
 		customer.addBooking(booking);
 		customerRepository.save(customer);
+	}
+
+	@Test
+	public void canGetAllCoursesWithRating4() {
+		List<Course> results = courseRepository.getAllCoursesWithRating(4);
 	}
 
 }

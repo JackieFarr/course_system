@@ -1,7 +1,7 @@
 package com.example.CourseTracker.controllers;
 
 import com.example.CourseTracker.models.Booking;
-import com.example.CourseTracker.repositories.BookingRepository;
+import com.example.CourseTracker.repositories.BookingRepository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
