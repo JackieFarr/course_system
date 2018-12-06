@@ -1,7 +1,9 @@
 package com.example.CourseTracker.controllers;
 
 import com.example.CourseTracker.models.Course;
+import com.example.CourseTracker.models.Customer;
 import com.example.CourseTracker.repositories.CourseRepository.CourseRepository;
+import com.example.CourseTracker.repositories.CustomerRepository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,9 @@ public class CourseController {
     @Autowired
     CourseRepository courseRepository;
 
+    @Autowired
+    CustomerRepository customerRepository;
+
     @GetMapping
     public List<Course> getAllCourses(){
         return courseRepository.findAll();
@@ -25,6 +30,11 @@ public class CourseController {
     @GetMapping(value = "/rating/{rating}")
     public List<Course> getAllCoursesWithRating(@PathVariable int rating) {
         return courseRepository.getAllCoursesWithRating(rating);
+    }
+
+    @GetMapping(value = "/{id}/customers")
+    public List<Customer> getAllCustomersForCourse(@PathVariable Long id){
+        return customerRepository.getAllCustomersForCourse(id);
     }
 
 }
