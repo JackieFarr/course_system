@@ -1,14 +1,21 @@
 package com.example.CourseTracker.controllers;
 
+import com.example.CourseTracker.models.CaseInsensitivePathMatcher;
 import com.example.CourseTracker.models.Course;
 import com.example.CourseTracker.models.Customer;
 import com.example.CourseTracker.repositories.CourseRepository.CourseRepository;
 import com.example.CourseTracker.repositories.CustomerRepository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.util.PathMatcher;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 import java.util.List;
 
