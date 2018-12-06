@@ -27,16 +27,16 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-        Course java = new Course("Intro to Java", "edinburgh", 4);
+        Course java = new Course("intro to java", "edinburgh", 4);
         courseRepository.save(java);
 
-        Course ruby = new Course("Intro to Ruby", "glasgow", 3);
+        Course ruby = new Course("intro to ruby", "glasgow", 3);
         courseRepository.save(ruby);
 
-        Customer steve = new Customer("Steve", "linlithgow", 35);
+        Customer steve = new Customer("steve", "linlithgow", 35);
         customerRepository.save(steve);
 
-        Customer hetty = new Customer("Hetty", "glasgow", 52);
+        Customer hetty = new Customer("hetty", "glasgow", 52);
         customerRepository.save(hetty);
 
         Booking booking1 = new Booking("13-06-18", java, steve);
