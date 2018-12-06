@@ -23,7 +23,7 @@ public class Course {
 
     @Column(name = "rating")
     private int rating;
-    
+
     @JsonIgnore
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<Booking> bookings;
