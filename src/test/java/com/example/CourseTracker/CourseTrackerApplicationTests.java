@@ -86,4 +86,9 @@ public class CourseTrackerApplicationTests {
 		List<Customer> results = customerRepository.getAllCustomersFromTownOnCourse("linlithgow", 2L);
 	}
 
+	@Test
+	public void canGetAllCustomersOver25FromGlasgowOnRubyCourse(){
+		List<Customer> results = customerRepository.getAllCustomersOverAgeFromTownOnCourse(25, "glasgow", 2L);
+	}
+
 }
