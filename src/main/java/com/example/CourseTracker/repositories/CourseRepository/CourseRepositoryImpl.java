@@ -52,7 +52,24 @@ public class CourseRepositoryImpl implements CourseRepositoryCustom {
             session.close();
         }
 
+        return results;
+    }
 
+    @Transactional
+    public List<Course> getAllCoursesWithTown(String town) {
+        List<Course> results = null;
+
+        Session session = entityManager.unwrap(Session.class);
+
+        try {
+            Criteria cr = session.createCriteria(Course.class);
+            cr.add(Restrictions.eq("town", town));
+            results = cr.list();
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
 
         return results;
     }
