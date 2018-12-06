@@ -81,4 +81,9 @@ public class CourseTrackerApplicationTests {
 		List<Booking> results = bookingRepository.getAllBookingsForDate("13-06-18");
 	}
 
+	@Test
+	public void canGetAllCustomersFromLinlithgowOnRubyCourse() {
+		List<Customer> results = customerRepository.getAllCustomersFromTownOnCourse("linlithgow", 2L);
+	}
+
 }
