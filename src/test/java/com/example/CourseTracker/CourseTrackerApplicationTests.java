@@ -67,8 +67,13 @@ public class CourseTrackerApplicationTests {
 	}
 
 	@Test
-	public void canGetAllCustomersForCourseId1(){
+	public void canGetAllCustomersForCourseId1() {
 		List<Customer> results = customerRepository.getAllCustomersForCourse(1L);
+	}
+
+	@Test
+	public void canGetAllCoursesForCustomerId1() {
+		List<Course> results = courseRepository.getAllCoursesForCustomer(1L);
 	}
 
 }
