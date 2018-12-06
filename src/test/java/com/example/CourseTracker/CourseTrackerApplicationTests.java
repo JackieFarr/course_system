@@ -76,4 +76,9 @@ public class CourseTrackerApplicationTests {
 		List<Course> results = courseRepository.getAllCoursesForCustomer(1L);
 	}
 
+	@Test
+	public void canGetAllBookingsForDate_13_06_18(){
+		List<Booking> results = bookingRepository.getAllBookingsForDate("13-06-18");
+	}
+
 }
